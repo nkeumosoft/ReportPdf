@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    {% block additional_styles %}
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+    {{ background_default }}
+   {% endblock %}
+</head>
+<body>
+
+{% block header %}
+
+  {% endblock %}
+
+  {% block content %}
+
+  {% endblock %}
+
+  {% block footer %}
+
+  {% endblock %}
+
+</body>
+</html>

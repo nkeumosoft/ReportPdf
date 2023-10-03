@@ -1,0 +1,45 @@
+.grid-container {
+    display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      grid-gap: 10px;
+    margin-left: 4em;
+}
+
+
+.grid-item img {
+   width: 100%;
+  height: auto;
+}
+
+.template_title{
+    font-weight: 200;
+    font-size: 6em;
+}
+body{
+    display: grid;
+    grid-template-rows: 1fr 1.5fr 0.5fr;
+}
+
+header{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    justify-content: left;
+    margin-left: 2em;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
+    margin-left: 4em;
+    margin-top: 6em;
+    gap: 14em;
+}
+
+footer img {
+    width: 12em;
+}
+
+footer{
+    page-break-after: always;
+}
