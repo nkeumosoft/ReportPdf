@@ -1,0 +1,44 @@
+
+{% extends 'core/base.html' %}
+{% load static %}
+
+ {% block additional_styles %}
+        <link rel="stylesheet" href="{% static 'css/coverstyle.css' %}">
+        <style>
+           body {
+            background-image: url('{{background_default}}');
+           }
+        </style>
+
+   {% endblock %}
+
+{% block content %}
+     <main>
+    <header>
+      <div class="description">
+        <div class="date"><h2>{{start_date|date:'dd-mm-yy'}} - {{end_date|date:'dd-mm-yy'}} </h2></div>
+        <ul>
+          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
+          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
+          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
+          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
+          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
+        </ul>
+      </div>
+      <h1>Social Media Insights</h1>
+    </header>
+    <footer>
+        <img class="img-logo" src="{% url '{{logo}}'%}" alt="" srcset="">
+    </footer>
+  </main>
+{% endblock %}
+
+
+  {% block header %}
+
+  {% endblock %}
+
+
+  {% block footer %}
+
+  {% endblock %}

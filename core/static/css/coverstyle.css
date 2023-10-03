@@ -1,0 +1,84 @@
+:root{
+    --h3-color: grey;
+    --h2-color: rgb(79, 191, 199);
+    --h1-color:rgba(35, 91, 95, 0.781);
+    --h3-font-size: 1.8em;
+    --h1-font-size:6em;
+    --h2-font-size:2.5em;
+
+}
+
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-size: contain;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    border: none;
+    width: 100%;
+    height: 950px;
+
+}
+
+
+main{
+    display: grid;
+    grid-template-rows: 8fr 1fr;
+    margin-left: 17em;
+    gap: 24em;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+h1{
+    -moz-font-size:5.3em;
+    font-size: var(--h1-font-size);
+    text-align: right;
+    margin-right: 0.5em;
+    color: var(--h1-color);
+}
+
+h2{
+    font-size: var(h2-font-size);
+    color: var(--h1-color);
+}
+.description{
+    margin-top: 7em;
+}
+
+footer {
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse ;
+    margin-right: 2.8em;
+    bottom: 9.8em;
+    page-break-after: always;
+}
+footer img {
+    break-inside: avoid;
+    width: 10em;
+}
+
+.date{
+    margin-left: 2em;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--h3-color);
+    font-size:  var(--h3-font-size);
+}
