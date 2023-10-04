@@ -1,44 +1,37 @@
-
-{% extends 'core/base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{% static 'css/coverstyle.css' %}">
+    <style>
 
- {% block additional_styles %}
-        <link rel="stylesheet" href="{% static 'css/coverstyle.css' %}">
-        <style>
-           body {
+         body {
             background-image: url('{{background_default}}');
            }
-        </style>
+    </style>
 
-   {% endblock %}
 
-{% block content %}
+</head>
+<body>
      <main>
     <header>
       <div class="description">
-        <div class="date"><h2>{{start_date|date:'dd-mm-yy'}} - {{end_date|date:'dd-mm-yy'}} </h2></div>
+          <h1>Social Media Insights</h1>
+        <div class="date"><h2>{{start_date|date:'d M y'}} - {{end_date|date:'d M y'}} </h2></div>
         <ul>
-          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
-          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
-          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
-          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
-          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>
+          <li><a href=""><i></i><h3>app.metricool.com</h3></a></li>
+          <li><a href=""><i></i><h3>Metricool Es nn</h3></a></li>
+          <li><a href=""><i></i><h3>Metricool</h3></a></li>
+          <li><a href=""><i></i><h3>Metricool</h3></a></li>
+          <li><a href=""><i></i><h3>Metricool</h3></a></li>
         </ul>
       </div>
-      <h1>Social Media Insights</h1>
+
     </header>
     <footer>
-        <img class="img-logo" src="{% url '{{logo}}'%}" alt="" srcset="">
+        <img class="img-logo" src="{{logo}}" alt="" srcset="">
     </footer>
   </main>
-{% endblock %}
-
-
-  {% block header %}
-
-  {% endblock %}
-
-
-  {% block footer %}
-
-  {% endblock %}
+</body>
+</html>
