@@ -1,45 +1,34 @@
-{% extends 'core/base.html' %}
 {% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
 
- {% block additional_styles %}
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
-        <style>
-           body {
-            background-image: url('{{background_default}}');
+         body {
+            background-image: url({{background_default}});
            }
-        </style>
-
-   {% endblock %}
+    </style>
 
 
-  {% block header %}
-    <header>
+</head>
+<body>
+    <main>
+        <header>
+          <div class="description">
+              <h2>{{title}}</h2>
+              <h3>{{subTitle}}</h3>
+          </div>
+        </header>
+         <section>
+             <img class="image-patterns" src="{{tmpIMage}}" alt="" srcset="">
+         </section>
+        <footer>
+            <div class="date"><h2>{{start_date|date:'d M y'}} - {{end_date|date:'d M y'}} </h2></div>
+            <img class="img-logo" src="{{logo}}" alt="" srcset="">
 
-      <div class="template_title">Community growth</div>
-      <div><img src="{% url '{{logo}}'%}" alt="" srcset=""></div>
-    </header>
-  {% endblock %}
-
-
-{% block content %}
-
-    <div class="grid-container">
-        {% for char in chart_list %}
-            <div class="grid-item">
-              <img src="{% url '{{chart}}'%}" alt="Image 1">
-            </div>
-        {% endfor %}
-    <!-- Ajoutez plus de div.grid-item avec des images supplémentaires -->
-  </div>
-{% endblock %}
-
-
-
-  {% block footer %}
-     <footer>
-      <div class="description">
-        <div class="date"><h2>{{start_date|date:'dd-mm-yy'}} - {{end_date|date:'dd-mm-yy'}} </h2></div>
-      </div>
-      <div><img src="{% url '{{logo}}'%}" alt="" srcset=""></div>
-    </footer>
-  {% endblock %}
+        </footer>
+    </main>
+</body>
+</html>

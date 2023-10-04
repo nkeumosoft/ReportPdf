@@ -3,26 +3,139 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <style>
+        :root{
+            --h3-color: grey;
+            --h2-color: rgb(79, 191, 199);
+            --h1-color:rgba(35, 91, 95, 0.781);
+            --h3-font-size: 1.8em;
+            --h1-font-size:6em;
+            --h2-font-size:2.5em;
 
-    {% block additional_styles %}
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+        }
 
-    {{ background_default }}
-   {% endblock %}
+
+        *{
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body{
+            background-repeat: no-repeat;
+            background-size: contain;
+            -webkit-border-radius: 50px;
+            -moz-border-radius: 50px;
+            border-radius: 50px;
+            border: none;
+            width: 100%;
+            height: 950px;
+
+        }
+
+
+        main{
+            display: grid;
+            grid-template-rows: 8fr 1fr;
+            margin-left: 17em;
+            gap: 24em;
+        }
+
+        header{
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+        }
+
+        h1{
+            -moz-font-size:5.3em;
+            font-size: var(--h1-font-size);
+            text-align: right;
+            margin-right: 0.5em;
+            color: var(--h1-color);
+        }
+
+        h2{
+            font-size: var(--h2-font-size);
+            color: var(--h1-color);
+        }
+        .description{
+            margin-top: 7em;
+        }
+
+        footer {
+            display: flex;
+            position: relative;
+            flex-direction: row-reverse ;
+            margin-right: 2.8em;
+            bottom: 9.8em;
+            page-break-after: always;
+        }
+        footer img {
+            break-inside: avoid;
+            width: 10em;
+        }
+
+        .date{
+            margin-left: 2em;
+        }
+
+        li{
+            list-style: none;
+        }
+
+        a{
+            text-decoration: none;
+            color: var(--h3-color);
+            font-size:  var(--h3-font-size);
+        }
+
+    </style>
+
+
 </head>
 <body>
 
-{% block header %}
+
+ {% block additional_styles %}
+
+        <style>
+           body {
+            background-image: url('{{background_default}}');
+           }
+        </style>
+
+   {% endblock %}
+
+{% block content %}
+     <main>
+    <header>
+      <div class="description">
+        <div class="date"><h2>{{start_date|date:'dd-mm-yy'}} - {{end_date|date:'dd-mm-yy'}} </h2></div>
+        <ul>
+            <img class="img-logo" src="{% static 'metric' %}" alt="" srcset="">
+<!--          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>-->
+<!--          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>-->
+<!--          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>-->
+<!--          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>-->
+<!--          <li><a href=""><i></i><h3>{{metric}}</h3></a></li>-->
+        </ul>
+      </div>
+      <h1>Social Media Insights</h1>
+    </header>
+    <footer>
+        <img class="img-logo" src="{% static 'logo' %}" alt="" srcset="">
+    </footer>
+  </main>
+{% endblock %}
+
+
+  {% block header %}
 
   {% endblock %}
 
-  {% block content %}
-
-  {% endblock %}
 
   {% block footer %}
 
   {% endblock %}
-
 </body>
 </html>

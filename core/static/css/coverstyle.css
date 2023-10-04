@@ -4,7 +4,7 @@
     --h1-color:rgba(35, 91, 95, 0.781);
     --h3-font-size: 1.8em;
     --h1-font-size:6em;
-    --h2-font-size:2.5em;
+    --h2-font-size:1.5em;
 
 }
 
@@ -17,7 +17,7 @@
 
 body{
     background-repeat: no-repeat;
-    background-size: contain;
+    background-size: cover;
     -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
@@ -33,15 +33,20 @@ main{
     grid-template-rows: 8fr 1fr;
     margin-left: 17em;
     gap: 24em;
+    position: relative;
 }
 
 header{
     display: grid;
-    grid-template-columns: 1fr 1.5fr;
+    grid-template-columns: 400px 600px;
+
 }
 
 h1{
-    -moz-font-size:5.3em;
+    z-index: 3;
+    position: absolute;
+    left: 2em;
+    top: 0;
     font-size: var(--h1-font-size);
     text-align: right;
     margin-right: 0.5em;
@@ -49,24 +54,28 @@ h1{
 }
 
 h2{
-    font-size: var(h2-font-size);
+    font-size: var(--h2-font-size);
     color: var(--h1-color);
 }
 .description{
-    margin-top: 7em;
+    padding-top: 15em;
+    max-width: 440px;
 }
 
 footer {
-    display: flex;
-    position: relative;
-    flex-direction: row-reverse ;
-    margin-right: 2.8em;
-    bottom: 9.8em;
     page-break-after: always;
 }
-footer img {
+.img-logo {
     break-inside: avoid;
     width: 10em;
+    position: absolute;
+    left: 55em;
+    bottom: 3em;
+}
+
+footer{
+    display: flex;
+    flex-direction: row;
 }
 
 .date{
