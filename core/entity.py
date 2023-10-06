@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from pandas import DataFrame
-
 
 class PlotObject:
     """
@@ -15,18 +13,15 @@ class PlotObject:
 
     def __init__(
         self,
-        data_frame_targets: DataFrame,
-        x: str,
-        y: str,
+        data_frame_targets: list,
         name_report: str,
         kind_plot: str = 'line',
         image_type='svg',
     ):
 
         self.dataFrameTarget = data_frame_targets
-        self.x = x
-        self.y = y
+
         self.kindPlot = kind_plot
         self.name_report = name_report
         self.image_type = image_type
-        self.target = f'plot_image_render/{self.name_report}.{self.image_type}'
+        self.target = f'static/{self.name_report}.{self.image_type}'

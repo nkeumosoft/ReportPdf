@@ -4,8 +4,11 @@ import logging
 import os
 from pathlib import Path
 
+import matplotlib.pyplot as plt
 import pdfkit
 from django.shortcuts import render
+
+from core.entity import PlotObject
 
 
 def get_abosulte_path_of_file(filename):
@@ -16,7 +19,7 @@ def get_abosulte_path_of_file(filename):
     return absolute_path
 
 
-def render_string_pdf(request, template_name, outputfile='report.pdf', context={}, css='static/css/coverstyle.css'):
+def render_string_to_pdf(request, template_name, outputfile='report.pdf', context={}, css='static/css/coverstyle.css'):
 
     # Render HTML template with elements from report
     source_html = bytes.decode(
@@ -37,4 +40,16 @@ def render_string_pdf(request, template_name, outputfile='report.pdf', context={
             'margin-left': '0',
         },
         css=get_abosulte_path_of_file(css),
+    )
+
+
+def graph_targets(graph_to_plot: PlotObject):
+    # Create graph
+    plt.plot(
+        graph_to_plot.dataFrameTarget,
+    )
+
+    # Save image as SVG
+    plt.savefig(
+        get_abosulte_path_of_file(graph_to_plot.target),
     )

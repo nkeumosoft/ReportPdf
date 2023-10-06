@@ -9,7 +9,7 @@ Makefile.in
 /ylwrap
 .deps/
 .dirstamp
-
+*.pdf
 # http://www.gnu.org/software/autoconf
 
 autom4te.cache
